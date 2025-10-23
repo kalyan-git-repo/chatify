@@ -24,7 +24,7 @@ app.use("/api/messages", messageRoutes)
 if (ENV.NODE_ENV === "production") {
     app.use(express.static(path.join(_dirname, "../frontend/dist")))
 
-    app.get("*", (req, res) => {
+    app.get("*", (_, res) => {
         res.sendFile(path.join(_dirname, "../frontend", "dist", "index.html"))
     })
 }
